@@ -121,7 +121,7 @@ export default App
 */
 
 // 1.3
-
+/*
 const App = () => {
   const course = 'Half Stack application development'
   const part1 = {
@@ -144,6 +144,72 @@ const App = () => {
       <p>{part2.name} {part2.exercises}</p>
       <p>{part3.name} {part3.exercises}</p>
       <p>Number of exercises {part1.exercises + part2.exercises + part3.exercises}</p>
+    </div>
+  )
+}
+
+export default App
+*/
+
+//1.4
+
+const Header = (props) => {
+  return (
+    <div>
+      <h1>{props.course}</h1>
+    </div>
+  )
+}
+const App = () => {
+  const course = 'Half Stack application development'
+  const parts = [
+    {
+      name: 'Fundamentals of React',
+      exercises: 10
+    },
+    {
+      name: 'Using props to pass data',
+      exercises: 7
+    },
+    {
+      name: 'State of a component',
+      exercises: 14
+    }
+  ]
+
+  return (
+    <div>
+      <Header course={course} />
+      <Content parts={parts}/> 
+      <Total parts={parts} />
+    </div>
+  )
+
+}
+
+const Content = (props) => {
+  const listItems = props.parts.map(function(element) {
+
+    return (
+      <div>
+        <p>{element.name}: {element.exercises}</p>
+      </div>
+      )
+  })
+  return listItems
+  
+}
+
+const Total = (props) => {
+  var sum = 0
+  const listItems = props.parts.map(function(element) {
+    return (
+      sum = sum + element.exercises
+    )
+  })
+  return (
+    <div>
+       <p>Number of exercises: {sum}</p>
     </div>
   )
 }
