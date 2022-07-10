@@ -235,6 +235,7 @@ const App = () => {
 }
 export default App
 /------------Exercise1.11----------/
+<<<<<<< HEAD
 const Button = (props) => (
   <button onClick={props.handleClick}>{props.text}</button>
 )
@@ -297,6 +298,8 @@ const App = () => {
     </div>
   )
 }
+=======
+>>>>>>> 335ccbc11ea4485be13da1ac43764bf8eeb8f6e0
 
 /------------Exercise1.12----------/
 import { useState } from 'react'
