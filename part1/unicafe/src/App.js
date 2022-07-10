@@ -174,7 +174,7 @@ const Button = (props) => (
 const StatisticLine = (props) => (
   <p>{props.text} {props.value}</p>
 )
-
+ 
 const Statistics = (props) => {
   console.log(typeof props.feedback)
   if (props.good === 0 && props.neutral === 0 && props.bad === 0)
