@@ -317,6 +317,7 @@ const App = () => {
 */ 
 
 //1.13
+
 const App = () => {
   const anecdotes = [
     'If it hurts, do it more often.',
@@ -342,10 +343,6 @@ const App = () => {
     const copy = [...voted]
     copy[selected] += 1
     setVoted(copy)
-  }
-
-  const handleVote = () => {
-    setVoted(voted + 1)
   }
 
   return (
