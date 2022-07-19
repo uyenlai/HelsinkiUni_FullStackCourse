@@ -1,17 +1,27 @@
-//2.1
-const Header = (props) => {
-  return(
-    <div>{props.name}</div>
-  )
+const Header = ( {name} ) => <h1>{name}</h1>
+
+const Part = ( {part} ) => 
+<p>
+  {part.name} {part.exercises}
+</p>
+
+const Content = ( {parts} ) => {
+  const list = parts.map(function(item, index) {
+    return (
+      <div key = {index}>
+        <Part part={item}/>
+      </div>
+    )
+  })
+  return list
 }
 
-const Course = (props) => {
-  return(
+const Course = ({ course }) => {
+  return (
     <div>
-      <Header />
-      <Content />
-        <Part />
-    </div>
+      <Header name={course.name}/>
+      <Content parts={course.parts} />
+    </div>  
   )
 }
 
@@ -38,7 +48,10 @@ const App = () => {
     ]
   }
 
-  return <Course course={course} />
+  return(
+    <div>
+      <Course course={course}/>
+    </div>
+  )
 }
-
-export default App;
+export default App
