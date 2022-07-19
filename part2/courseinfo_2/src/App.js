@@ -5,7 +5,7 @@ const Part = ( {part} ) =>
   {part.name} {part.exercises}
 </p>
 
-const Content = ( {parts} ) => {
+const Content = ({ parts }) => {
   const list = parts.map(function(item, index) {
     return (
       <div key = {index}>
@@ -16,11 +16,14 @@ const Content = ( {parts} ) => {
   return list
 }
 
+const Total = ({ sum }) => <p>Total of {sum} exercises</p>
+
 const Course = ({ course }) => {
   return (
     <div>
       <Header name={course.name}/>
       <Content parts={course.parts} />
+      <Total sum={course.parts[0].exercises + course.parts[1].exercises + course.parts[2].exercises} />
     </div>  
   )
 }
