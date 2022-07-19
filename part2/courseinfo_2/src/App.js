@@ -16,14 +16,21 @@ const Content = ({ parts }) => {
   return list
 }
 
-const Total = ({ sum }) => <p>Total of {sum} exercises</p>
+const Total = ({ sum }) => {
+  const total = sum.reduce(function(accumulator, currentValue){
+    return accumulator + currentValue.exercises
+  }, 0)
+  return (
+    <p>Total of {total} exercises</p>
+  )
+}
 
 const Course = ({ course }) => {
   return (
     <div>
       <Header name={course.name}/>
       <Content parts={course.parts} />
-      <Total sum={course.parts[0].exercises + course.parts[1].exercises + course.parts[2].exercises} />
+      <Total sum={course.parts} />
     </div>  
   )
 }
