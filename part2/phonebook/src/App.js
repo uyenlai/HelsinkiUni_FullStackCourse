@@ -17,10 +17,12 @@ const App = () => {
   }
 
   function showName(element) {
-    return (
-      element.name + '\n'
-    )
-  }
+   return(
+    <div key={element.name}>
+      {element.name}
+    </div>
+   )
+  }  
   const newPerson = persons.map(showName)
 
   return (
@@ -40,7 +42,10 @@ const App = () => {
         </div>
       </form>
       <h2>Numbers</h2>
-      <p>{newPerson}</p>
+      <>
+      {newPerson}
+      </>
+      
     </div>
 
   )
